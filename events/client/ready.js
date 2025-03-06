@@ -25,7 +25,7 @@ module.exports = async (client) => {
         await client.user.setPresence({
             activities : [
                 {
-                    name: "Ligue ebTV Saison 4",
+                    name: "Fullwipe 2025",
                     state: "/help",
                     type: 5,
                     url: "https://www.youtube.com/@eSportBrosTV"

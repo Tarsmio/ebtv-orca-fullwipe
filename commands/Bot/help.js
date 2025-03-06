@@ -30,7 +30,7 @@ module.exports.execute = async (interaction) => {
 
     if (!commandName) {
         const helpEmbed = new EmbedBuilder()
-            .setTitle("Commandes de O.R.C.A")
+            .setTitle("Commandes de O.R.C.A Fullwipe")
             .setThumbnail(interaction.client.user.avatarURL({
                 extension: 'png',
                 size: 128
