@@ -10,7 +10,8 @@ const catEmote = {
     Fun: ":game_die:",
     Ligue: ":squid:",
     Toornament: ":computer:",
-    Outils: ":tools:"
+    Outils: ":tools:",
+    Fullwipe: "<:logo:1347309580438208664>"
 }
 
 function hasAcces(cmd, roles) {
@@ -40,7 +41,7 @@ module.exports.execute = async (interaction) => {
 
         categoryList.forEach((async cat => {
             var commandListe = interaction.client.commands.filter(cmd => {
-                return cmd.info.category === cat.toLocaleLowerCase() && (cmd.info.helpReportType == 0 || (cmd.info.helpReportType == 1 && hasAcces(cmd, interaction.member.roles)))
+                return cmd.info.category === cat.toLocaleLowerCase() && (cmd.info.helpReportType == 0 || (cmd.info.helpReportType == 1 && (interaction.inGuild() ? hasAcces(cmd, interaction.member.roles) : (cmd.info.rolePermission.length <= 0))))
             }).map(cmd => {
                 var cmdId = interaction.client.commandIds.application.find((value, key) => key == cmd.info.name)
 
@@ -72,7 +73,7 @@ module.exports.execute = async (interaction) => {
             ephemeral: true
         })
 
-        if (!hasAcces(command, interaction.member.roles)) return interaction.reply({
+        if (interaction.inGuild() ? !hasAcces(command, interaction.member.roles) : (command.info.rolePermission.length > 0)) return interaction.reply({
             content: `Je ne peut pas vous montrer la commande **${commandName}** car vous n'y avez pas acces`,
             ephemeral: true
         })
@@ -151,7 +152,7 @@ module.exports.autocom = async (interaction) => {
     const option = interaction.options.getFocused(true);
 
     if (option.name === 'commande') {
-        const commandeListe = interaction.client.commands.filter(cmd => hasAcces(cmd, interaction.member.roles) && cmd.info.helpReportType != 2).map(cmd => cmd.info.name)
+        const commandeListe = interaction.client.commands.filter(cmd => (interaction.inGuild() ? hasAcces(cmd, interaction.member.roles) : (cmd.info.rolePermission.length <= 0)) && cmd.info.helpReportType != 2).map(cmd => cmd.info.name)
 
         const filterElement = commandeListe.filter(el => el.startsWith(option.value))
 
