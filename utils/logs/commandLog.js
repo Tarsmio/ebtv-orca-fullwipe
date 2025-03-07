@@ -2,19 +2,19 @@ const { EmbedBuilder, Options, CommandInteraction } = require("discord.js")
 
 module.exports = (cmdInteraction) => {
     const command = cmdInteraction.client.commands.get(cmdInteraction.commandName)
-    const member = cmdInteraction.member
+    const user = cmdInteraction.inGuild() ? cmdInteraction.member : cmdInteraction.user
     const commandJSON = command.dataSlash.toJSON()
 
     const logEmbed = new EmbedBuilder()
         .setTitle("Log O.R.C.A")
         .setDescription(`La commande </${cmdInteraction.commandName}:${cmdInteraction.commandId}> vient d'etre effectuer`)
         .setColor("#1882f9")
-        .setThumbnail(member.displayAvatarURL())
+        .setThumbnail(user.displayAvatarURL())
         .setTimestamp()
         .addFields(
             {
                 name: 'Surnom utilisateur',
-                value: member.nickname !== null ? `${member.nickname}` : "Pas de surnom sur le serveur.",
+                value: cmdInteraction.inGuild() ? (user.nickname !== null ? `${user.nickname}` : "Pas de surnom sur le serveur.") : user.username,
                 inline: true
             },
             {
