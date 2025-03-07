@@ -3,7 +3,7 @@
  * @param {string} string - The string to be formatted.
  * @returns {string} Returns the formatted string.
  */
-function formatingString(string){
+function formatingString(string) {
     // Replace whitespaces with "-"
     const stringWithoutSpaces = string.replace(/\s+/g, '-');
 
@@ -20,32 +20,56 @@ function randomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+function randomFullwipeColor() {
+    const randomNum = randomInt(1, 5)
+
+    switch (randomNum) {
+        case 4:
+            return "#dc1c53"
+
+        case 3:
+            return "#dc1c53"
+
+        case 2:
+            return "#2918e0"
+
+        case 5:
+            return "#ec7a19"
+
+        case 1:
+            return "57db0f"
+
+        default:
+            return "#dc1c53"
+    }
+}
+
 /**
  * Checks if the division name corresponds to a valid pick-ban division.
  * @param {string} divisionName - The name of the division to check.
  * @returns {boolean} Returns true if the division name corresponds to a valid pick-ban division, otherwise returns false.
  */
-function checkDivPickBan(divisionName){
+function checkDivPickBan(divisionName) {
     const parts = divisionName.split(" ")
     const divNumber = parseInt(parts[1]);
 
-    if(!isNaN(divNumber) && divNumber != 11){
+    if (!isNaN(divNumber) && divNumber != 11) {
         return true;
     } else {
         return false;
     }
 }
 
-function checkCastTime(dateString){
+function checkCastTime(dateString) {
     const providedDate = new Date(dateString);
     const today = new Date();
 
-    if(providedDate.toDateString() === today.toDateString()) {
+    if (providedDate.toDateString() === today.toDateString()) {
         let hour = providedDate.toLocaleTimeString('fr', { timeZone: 'Europe/Paris', hour: '2-digit', minute: '2-digit' }); //Include the timezone time on the previous date given
         hour = hour.replace(":", "h")
         return `Votre match prévu aujourd'hui à ${hour} va être cast par`;
     } else {
-        const parisDateTimezone = providedDate.toLocaleTimeString('fr', { timeZone: 'Europe/Paris', day: '2-digit', month: '2-digit', hour: '2-digit',minute: '2-digit' });
+        const parisDateTimezone = providedDate.toLocaleTimeString('fr', { timeZone: 'Europe/Paris', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' });
         const date = parisDateTimezone.split(' ')[0];
         let hour = parisDateTimezone.split(' ')[1];
         hour = hour.replace(":", "h")
@@ -74,7 +98,7 @@ function getDayOfWeekWithDate(dateString) {
     let dayOfMonth = date.getDate();
 
     // Construct the string in the format "Weekday Day Month"
-    let formattedDate = weekdayName + " " + dayOfMonth  + " " + monthName;
+    let formattedDate = weekdayName + " " + dayOfMonth + " " + monthName;
 
     return formattedDate;
 }
@@ -84,5 +108,6 @@ module.exports = {
     getDayOfWeekWithDate,
     checkDivPickBan,
     checkCastTime,
-    randomInt
+    randomInt,
+    randomFullwipeColor
 }
