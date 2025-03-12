@@ -11,7 +11,7 @@ const catEmote = {
     Ligue: ":squid:",
     Toornament: ":computer:",
     Outils: ":tools:",
-    Fullwipe: "<:logo:1347309580438208664>"
+    Fullwipe: `<:logo:${process.env.FULLWIPE_EMOTE}>`
 }
 
 function hasAcces(cmd, roles) {
