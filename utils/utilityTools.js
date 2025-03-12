@@ -37,7 +37,7 @@ function randomFullwipeColor() {
             return "#ec7a19"
 
         case 1:
-            return "57db0f"
+            return "#57db0f"
 
         default:
             return "#dc1c53"
