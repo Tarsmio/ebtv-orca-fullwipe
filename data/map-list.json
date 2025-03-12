@@ -1,0 +1,129 @@
+{
+    "stages": [
+        {
+            "id": 0,
+            "name": "Groupes",
+            "rounds": [
+                {
+                    "name": "Tour 1",
+                    "set": [
+                        {
+                            "map": 0,
+                            "mode": 0
+                        },
+                        {
+                            "map": 0,
+                            "mode": 0
+                        },
+                        {
+                            "map": 0,
+                            "mode": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Tour 2",
+                    "set": [
+                        {
+                            "map": 0,
+                            "mode": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Tour 3",
+                    "set": [
+                        {
+                            "map": 0,
+                            "mode": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "name": "Alpha",
+            "rounds": [
+                {
+                    "name": "1/8 Finale",
+                    "set": [
+                        {
+                            "map": 0,
+                            "mode": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "1/4 Finale",
+                    "set": [
+                        {
+                            "map": 0,
+                            "mode": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "1/2 Finale",
+                    "set": [
+                        {
+                            "map": 0,
+                            "mode": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Finale",
+                    "set": [
+                        {
+                            "map": 0,
+                            "mode": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Bravo",
+            "rounds": [
+                {
+                    "name": "1/8 Finale",
+                    "set": [
+                        {
+                            "map": 0,
+                            "mode": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "1/4 Finale",
+                    "set": [
+                        {
+                            "map": 0,
+                            "mode": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "1/2 Finale",
+                    "set": [
+                        {
+                            "map": 0,
+                            "mode": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "Finale",
+                    "set": [
+                        {
+                            "map": 0,
+                            "mode": 0
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

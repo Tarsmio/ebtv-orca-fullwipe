@@ -1,0 +1,123 @@
+{
+    "maps": [
+        {
+            "id": 0,
+            "name": "Canyon aux colonnes"
+        },
+        {
+            "id": 1,
+            "name": "Banlieue Balibot"
+        },
+        {
+            "id": 2,
+            "name": "Marché Grefin"
+        },
+        {
+            "id": 3,
+            "name": "Réservoir Rigadelle"
+        },
+        {
+            "id": 4,
+            "name": "Casse Rascasse"
+        },
+        {
+            "id": 5,
+            "name": "Pont Esturgeon"
+        },
+        {
+            "id": 6,
+            "name": "Galeries Guppy"
+        },
+        {
+            "id": 7,
+            "name": "Club Ca$halot"
+        },
+        {
+            "id": 8,
+            "name": "Institut Calam'arts"
+        },
+        {
+            "id": 9,
+            "name": "Chantier Narval"
+        },
+        {
+            "id": 10,
+            "name": "Supermarché Cétacé"
+        },
+        {
+            "id": 11,
+            "name": "Parc Carapince"
+        },
+        {
+            "id": 12,
+            "name": "Sources Sauret"
+        },
+        {
+            "id": 13,
+            "name": "Lotissement Filament"
+        },
+        {
+            "id": 14,
+            "name": "Ruines Uma'mi"
+        },
+        {
+            "id": 15,
+            "name": "Manta Maria"
+        },
+        {
+            "id": 16,
+            "name": "Halles de Port-merlu"
+        },
+        {
+            "id": 17,
+            "name": "Piste Méroule"
+        },
+        {
+            "id": 18,
+            "name": "Quartier Crabe-ciels"
+        },
+        {
+            "id": 19,
+            "name": "Chaland Flétan"
+        },
+        {
+            "id": 20,
+            "name": "Arène Méca-ramen"
+        },
+        {
+            "id": 21,
+            "name": "Mine marine"
+        },
+        {
+            "id": 22,
+            "name": "Terminal Rorqual"
+        },
+        {
+            "id": 23,
+            "name": "Gare Aiguillat"
+        }
+    ],
+
+    "modes": [
+        {
+            "id": 0,
+            "name": "Defense de zone",
+            "abv": "DDZ"
+        },
+        {
+            "id": 1,
+            "name": "Expedition Risquée",
+            "abv": "ER"
+        },
+        {
+            "id": 2,
+            "name": "Mission Bazookarpe",
+            "abv": "MB"
+        },
+        {
+            "id": 3,
+            "name": "Pluie de Palourdes",
+            "abv": "PDP"
+        }
+    ]
+}
