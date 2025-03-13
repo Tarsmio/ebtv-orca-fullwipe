@@ -35,7 +35,7 @@ module.exports.execute = async (interaction) => {
         components: [row]
     })
 
-    await interaction.editReply("Merci de votre signalement !")
+    await interaction.editReply("Merci de votre signalement ! N'hesitez pas a aller voir Tarsmio directement si le problème est vraiment urgent.")
 
 }
 
