@@ -3,7 +3,7 @@ const { readdirSync, copyFileSync, readSync, existsSync, } = require("fs")
 const { EmbedBuilder } = require('discord.js');
 const permIndex = require('../../utils/permIndex');
 const { randomFullwipeColor } = require('../../utils/utilityTools');
-const { fetchMatchesOfTeam, fetchMatchesPlayedOfTeam, fetchStages } = require('../../utils/matchUtils');
+const { fetchMatchesOfTeam, fetchMatchesPlayedOfTeam, fetchStages, fetchGroups } = require('../../utils/matchUtils');
 const categoryList = readdirSync("./commands")
 
 const scoreEmoteRoundIndex = [
@@ -76,6 +76,7 @@ module.exports.execute = async (interaction) => {
     } else {
         let fields = []
         let stages = await fetchStages()
+        let groups = await fetchGroups()
         let stagesOfTeam = []
 
 
@@ -99,7 +100,8 @@ module.exports.execute = async (interaction) => {
                 stagesOfTeam.push({
                     stage_infos: {
                         id: sta.id,
-                        name: sta.name
+                        name: sta.name,
+                        group_name: sta.name == "Groupes" ? groups.find(({id}) => id == m.group_id).name : null
                     },
                     matches: [`${teamResult.result == "win" ? `🟢 **${teamName}** ${scoreEmoteRoundIndex[teamResult.score]} - ${scoreEmoteRoundIndex[opoResult.score]} ${opoResult.participant.name}` : `🔴 ${teamName} ${scoreEmoteRoundIndex[teamResult.score]} - ${scoreEmoteRoundIndex[opoResult.score]} **${opoResult.participant.name}**`}`]
                 })
@@ -110,7 +112,7 @@ module.exports.execute = async (interaction) => {
 
         stagesOfTeam.forEach(st => {
             fields.push({
-                name: `Phase : ${st.stage_infos.name}`,
+                name: `Phase : ${st.stage_infos.name} ${st.stage_infos.group_name != null ? `(${st.stage_infos.group_name})` : ''}`,
                 value: st.matches.join("\n"),
             })
         })
