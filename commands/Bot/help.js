@@ -2,6 +2,7 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 const { readdirSync, copyFileSync } = require("fs")
 const { EmbedBuilder } = require('discord.js');
 const permIndex = require('../../utils/permIndex');
+const { randomFullwipeColor } = require('../../utils/utilityTools');
 const categoryList = readdirSync("./commands")
 
 const catEmote = {
@@ -36,7 +37,7 @@ module.exports.execute = async (interaction) => {
                 extension: 'png',
                 size: 128
             }))
-            .setColor("#35aa27")
+            .setColor(randomFullwipeColor())
             .setDescription("## Voici la liste des commandes du bot\n\n*Les commandes présentes dans cette liste sont uniquement celles auxquelles vous avez accès*\n")
 
         categoryList.forEach((async cat => {
@@ -100,7 +101,7 @@ module.exports.execute = async (interaction) => {
                 extension: 'png',
                 size: 128
             }))
-            .setColor("#35aa27")
+            .setColor(randomFullwipeColor())
             .setFooter({
                 text: `Categorie : ${command.info.category}`
             })
