@@ -3,8 +3,8 @@ const { readdirSync, copyFileSync, readSync, existsSync, } = require("fs")
 const { EmbedBuilder } = require('discord.js');
 const permIndex = require('../../utils/permIndex');
 const { randomFullwipeColor } = require('../../utils/utilityTools');
-const { maps, modes } = require('../../data/maps-modes.json')
-const { stages } = require('../../data/map-list.json');
+const { maps, modes } = require('../../data/maps-modes-data.json')
+const { stages } = require('../../data/map-pool.json');
 const emoteModeIndex = require('../../utils/emoteModeIndex');
 
 function stagesToChoice() {

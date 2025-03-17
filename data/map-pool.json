@@ -1,0 +1,307 @@
+{
+    "stages": [
+        {
+            "id": 0,
+            "name": "Groupes",
+            "rounds": [
+                {
+                    "name": "Tour 1",
+                    "set": [
+                        {
+                            "map": 22,
+                            "mode": 1
+                        },
+                        {
+                            "map": 3,
+                            "mode": 2
+                        },
+                        {
+                            "map": 6,
+                            "mode": 3
+                        }
+                    ]
+                },
+                {
+                    "name": "Tour 2",
+                    "set": [
+                        {
+                            "map": 16,
+                            "mode": 0
+                        },
+                        {
+                            "map": 2,
+                            "mode": 1
+                        },
+                        {
+                            "map": 12,
+                            "mode": 2
+                        }
+                    ]
+                },
+                {
+                    "name": "Tour 3",
+                    "set": [
+                        {
+                            "map": 0,
+                            "mode": 3
+                        },
+                        {
+                            "map": 10,
+                            "mode": 0
+                        },
+                        {
+                            "map": 8,
+                            "mode": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "name": "Alpha",
+            "rounds": [
+                {
+                    "name": "1/16 Finale",
+                    "set": [
+                        {
+                            "map": 14,
+                            "mode": 0
+                        },
+                        {
+                            "map": 6,
+                            "mode": 2
+                        },
+                        {
+                            "map": 15,
+                            "mode": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "1/8 Finale",
+                    "set": [
+                        {
+                            "map": 8,
+                            "mode": 3
+                        },
+                        {
+                            "map": 10,
+                            "mode": 0
+                        },
+                        {
+                            "map": 4,
+                            "mode": 2
+                        }
+                    ]
+                },
+                {
+                    "name": "1/4 Finale",
+                    "set": [
+                        {
+                            "map": 2,
+                            "mode": 1
+                        },
+                        {
+                            "map": 12,
+                            "mode": 3
+                        },
+                        {
+                            "map": 16,
+                            "mode": 0
+                        },
+                        {
+                            "map": 18,
+                            "mode": 2
+                        },
+                        {
+                            "map": 6,
+                            "mode": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "1/2 Finale",
+                    "set": [
+                        {
+                            "map": 0,
+                            "mode": 3
+                        },
+                        {
+                            "map": 20,
+                            "mode": 0
+                        },
+                        {
+                            "map": 17,
+                            "mode": 2
+                        },
+                        {
+                            "map": 3,
+                            "mode": 1
+                        },
+                        {
+                            "map": 6,
+                            "mode": 3
+                        }
+                    ]
+                },
+                {
+                    "name": "Finale",
+                    "set": [
+                        {
+                            "map": 2,
+                            "mode": 0
+                        },
+                        {
+                            "map": 0,
+                            "mode": 2
+                        },
+                        {
+                            "map": 10,
+                            "mode": 1
+                        },
+                        {
+                            "map": 16,
+                            "mode": 3
+                        },
+                        {
+                            "map": 7,
+                            "mode": 0
+                        },
+                        {
+                            "map": 3,
+                            "mode": 2
+                        },
+                        {
+                            "map": 8,
+                            "mode": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Bravo",
+            "rounds": [
+                {
+                    "name": "1/16 Finale",
+                    "set": [
+                        {
+                            "map": 14,
+                            "mode": 0
+                        },
+                        {
+                            "map": 6,
+                            "mode": 2
+                        },
+                        {
+                            "map": 15,
+                            "mode": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "1/8 Finale",
+                    "set": [
+                        {
+                            "map": 8,
+                            "mode": 3
+                        },
+                        {
+                            "map": 10,
+                            "mode": 0
+                        },
+                        {
+                            "map": 4,
+                            "mode": 2
+                        }
+                    ]
+                },
+                {
+                    "name": "1/4 Finale",
+                    "set": [
+                        {
+                            "map": 2,
+                            "mode": 1
+                        },
+                        {
+                            "map": 12,
+                            "mode": 3
+                        },
+                        {
+                            "map": 16,
+                            "mode": 0
+                        },
+                        {
+                            "map": 18,
+                            "mode": 2
+                        },
+                        {
+                            "map": 6,
+                            "mode": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "1/2 Finale",
+                    "set": [
+                        {
+                            "map": 0,
+                            "mode": 3
+                        },
+                        {
+                            "map": 20,
+                            "mode": 0
+                        },
+                        {
+                            "map": 17,
+                            "mode": 2
+                        },
+                        {
+                            "map": 3,
+                            "mode": 1
+                        },
+                        {
+                            "map": 6,
+                            "mode": 3
+                        }
+                    ]
+                },
+                {
+                    "name": "Finale",
+                    "set": [
+                        {
+                            "map": 2,
+                            "mode": 0
+                        },
+                        {
+                            "map": 0,
+                            "mode": 2
+                        },
+                        {
+                            "map": 10,
+                            "mode": 1
+                        },
+                        {
+                            "map": 16,
+                            "mode": 3
+                        },
+                        {
+                            "map": 7,
+                            "mode": 0
+                        },
+                        {
+                            "map": 3,
+                            "mode": 2
+                        },
+                        {
+                            "map": 8,
+                            "mode": 1
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
