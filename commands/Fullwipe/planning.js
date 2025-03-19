@@ -3,7 +3,7 @@ const { readdirSync, copyFileSync, readSync, existsSync, } = require("fs")
 const { EmbedBuilder } = require('discord.js');
 const permIndex = require('../../utils/permIndex');
 const { randomFullwipeColor } = require('../../utils/utilityTools');
-const { fetchMatchesOfTeam, fetchStages, fetchGroups } = require('../../utils/matchUtils');
+const { fetchMatchesOfTeam, fetchStages, fetchGroups, fetchRoundsOfGroups } = require('../../utils/matchUtils');
 const categoryList = readdirSync("./commands")
 
 module.exports.execute = async (interaction) => {
@@ -78,8 +78,19 @@ module.exports.execute = async (interaction) => {
         repEmbed.setDescription("Cette équipe n'as plus aucun match a jouer !")
     } else {
         let fields = []
+        let groupIdList = []
         let stages = await fetchStages()
         let groups = await fetchGroups()
+
+        matches.forEach(m => {
+            let gId = m.group_id
+
+            if(groupIdList.indexOf(gId) == -1){
+                groupIdList.push(gId)
+            }
+        })
+
+        let roundsOfGroups = await fetchRoundsOfGroups(groupIdList)
 
         matches.forEach(m => {
             let opo
@@ -91,8 +102,8 @@ module.exports.execute = async (interaction) => {
             let stageOfMatch = stages.find(({ id }) => id == m.stage_id)
 
             fields.push({
-                name: `Contre ${opo.name} (${stageOfMatch.name == "Groupes" ? groups.find(({id}) => id == m.group_id).name : stageOfMatch.name})`,
-                value: `Date : ${m.scheduled_datetime == null ? 'A determiné' : `<t:${Math.floor(new Date(m.scheduled_datetime) / 1000)}:f>`}\nLieu : ${m.public_note == null ? 'A determiné' : `**${m.public_note}**`}`,
+                name: `Contre ${opo.name}`,
+                value: `Tour : ${stageOfMatch.name == "Groupes" ? groups.find(({id}) => id == m.group_id).name : stageOfMatch.name} - ${roundsOfGroups.find(({id}) => id == m.round_id).name}\nDate : ${m.scheduled_datetime == null ? 'A determiné' : `<t:${Math.floor(new Date(m.scheduled_datetime) / 1000)}:f>`}\nLieu : ${m.public_note == null ? 'A determiné' : `**${m.public_note}**`}`,
             })
         })
 
