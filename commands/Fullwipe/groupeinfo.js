@@ -77,6 +77,13 @@ module.exports.execute = async (interaction) => {
         .setTitle(groupe.name)
         .setDescription(`Voici toutes les infos du groupe \"${groupe.name}\"`)
         .setColor(randomFullwipeColor())
+        .setFooter({
+            text: "Fullwipe 2025",
+            iconURL: interaction.client.user.avatarURL({
+                extension: "png",
+                size: 64
+            })
+        })
 
     if (ranking.lenght <= 0) {
         fields.push({
@@ -102,7 +109,7 @@ module.exports.execute = async (interaction) => {
         })
 
         ranking.forEach(r => {
-            rankEmbed.push(`${rankEmoteIndex[r.rank == null ? 0 : r.rank]} - **${r.participant == null ? "A determiné" : r.participant.name}** - ${winEmoteIndex[r.properties.wins]}**/**${looseEmoteIndex[r.properties.losses]} - **${r.points == null ? "0" : r.points} Pts**`)
+            rankEmbed.push(`${rankEmoteIndex[r.rank == null ? 0 : r.rank]} - **${r.points == null ? "0" : r.points} Pts** - ${winEmoteIndex[r.properties.wins]}**/**${looseEmoteIndex[r.properties.losses]} - **${r.participant == null ? "A determiné" : r.participant.name}**`)
         })
 
         fields.push({
@@ -113,7 +120,9 @@ module.exports.execute = async (interaction) => {
 
     repEmbed.addFields(fields)
 
-    await interaction.editReply({ embeds: [repEmbed] })
+    await interaction.editReply({
+        embeds: [repEmbed]
+    })
 }
 
 module.exports.info = {
