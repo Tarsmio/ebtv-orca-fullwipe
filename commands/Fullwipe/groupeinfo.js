@@ -74,7 +74,7 @@ module.exports.execute = async (interaction) => {
     let fields = []
 
     let repEmbed = new EmbedBuilder()
-        .setTitle(groupe.name)
+        .setTitle(`${groupe.name} <:groupe:${process.env.GROUPE_EMOTE}>`)
         .setDescription(`Voici toutes les infos du groupe \"${groupe.name}\"`)
         .setColor(randomFullwipeColor())
         .setFooter({
