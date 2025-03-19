@@ -84,8 +84,6 @@ module.exports.execute = async (interaction) => {
         matches.forEach(m => {
             let opo
 
-            let dateMatch = new Date(m.scheduled_datetime)
-
             m.opponents.forEach(op => {
                 if (op.participant.name != teamName) opo = op.participant
             })
@@ -94,7 +92,7 @@ module.exports.execute = async (interaction) => {
 
             fields.push({
                 name: `Contre ${opo.name} (${stageOfMatch.name == "Groupes" ? groups.find(({id}) => id == m.group_id).name : stageOfMatch.name})`,
-                value: `Date : <t:${Math.floor(dateMatch / 1000)}:f>\nLieu : **${m.public_note}**`,
+                value: `Date : ${m.scheduled_datetime == null ? 'A determiné' : `<t:${Math.floor(new Date(m.scheduled_datetime) / 1000)}:f>`}\nLieu : ${m.public_note == null ? 'A determiné' : `**${m.public_note}**`}`,
             })
         })
 
