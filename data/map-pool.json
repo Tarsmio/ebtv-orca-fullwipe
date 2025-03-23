@@ -62,23 +62,6 @@
             "name": "Alpha",
             "rounds": [
                 {
-                    "name": "1/16 Finale",
-                    "set": [
-                        {
-                            "map": 14,
-                            "mode": 0
-                        },
-                        {
-                            "map": 6,
-                            "mode": 2
-                        },
-                        {
-                            "map": 3,
-                            "mode": 1
-                        }
-                    ]
-                },
-                {
                     "name": "1/8 Finale",
                     "set": [
                         {
@@ -176,23 +159,6 @@
             "id": 2,
             "name": "Bravo",
             "rounds": [
-                {
-                    "name": "1/16 Finale",
-                    "set": [
-                        {
-                            "map": 14,
-                            "mode": 0
-                        },
-                        {
-                            "map": 6,
-                            "mode": 2
-                        },
-                        {
-                            "map": 3,
-                            "mode": 1
-                        }
-                    ]
-                },
                 {
                     "name": "1/8 Finale",
                     "set": [
