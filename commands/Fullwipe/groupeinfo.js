@@ -65,7 +65,7 @@ module.exports.execute = async (interaction) => {
 
     ranking.forEach(r => {
         if (r.participant == null) {
-            participantsNamesOfGroupe.push("A determiné")
+            participantsNamesOfGroupe.push("À déterminer")
         } else {
             participantsNamesOfGroupe.push(r.participant.name)
         }
@@ -87,13 +87,13 @@ module.exports.execute = async (interaction) => {
 
     if (ranking.lenght <= 0) {
         fields.push({
-            name: "Equipes du groupe",
-            value: "Ce groupe n'as aucune équipe"
+            name: "Équipes du groupe",
+            value: "Ce groupe n'a aucune équipe"
         })
 
         fields.push({
             name: "Classement",
-            value: "Ce groupe n'as pas de classement"
+            value: "Ce groupe n'a pas de classement"
         })
     } else {
         let teamEmbed = []
@@ -104,12 +104,12 @@ module.exports.execute = async (interaction) => {
         })
 
         fields.push({
-            name: "Equipes du groupe",
+            name: "Équipes du groupe",
             value: teamEmbed.join("\n")
         })
 
         ranking.forEach(r => {
-            rankEmbed.push(`${rankEmoteIndex[r.rank == null ? 0 : r.rank]} - **${r.points == null ? "0" : r.points} Pts** - ${winEmoteIndex[r.properties.wins]}**/**${looseEmoteIndex[r.properties.losses]} - **${r.participant == null ? "A determiné" : r.participant.name}**`)
+            rankEmbed.push(`${rankEmoteIndex[r.rank == null ? 0 : r.rank]} - **${r.points == null ? "0" : r.points} Pts** - ${winEmoteIndex[r.properties.wins]}**/**${looseEmoteIndex[r.properties.losses]} - **${r.participant == null ? "À déterminer" : r.participant.name}**`)
         })
 
         fields.push({
@@ -141,7 +141,7 @@ module.exports.dataSlash = new SlashCommandBuilder()
     .setDescription(this.info.description)
     .addStringOption(option =>
         option.setName("groupe")
-            .setDescription("Le groupe a afficher les infos")
+            .setDescription("Le groupe dont les infos doivent être affichées")
             .addChoices(stagesToChoice())
             .setRequired(true)
     )

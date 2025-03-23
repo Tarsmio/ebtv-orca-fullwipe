@@ -41,7 +41,7 @@ module.exports.execute = async (interaction) => {
             }
         });
 
-        if (!find) return await interaction.editReply(`L'équipe \`${team}\` n'existe pas !\n-# Pensez a bien verifier les caracatères speciaux`)
+        if (!find) return await interaction.editReply(`L'équipe \`${team}\` n'existe pas !\n-# Pensez à bien vérifier les caractères spéciaux.`)
     }
 
     let teamName = team.split("_")[0]
@@ -63,7 +63,7 @@ module.exports.execute = async (interaction) => {
 
     let repEmbed = new EmbedBuilder()
         .setTitle(`Planning de ${teamName}`)
-        .setDescription(`Voici le planning des matchs a venir de ${teamName}`)
+        .setDescription(`Voici le planning des matchs à venir de ${teamName}`)
         .setColor(randomFullwipeColor())
         .setThumbnail("attachment://logo.png")
         .setFooter({
@@ -75,7 +75,7 @@ module.exports.execute = async (interaction) => {
         })
 
     if (matches.length <= 0) {
-        repEmbed.setDescription("Cette équipe n'as plus aucun match a jouer !")
+        repEmbed.setDescription("Cette équipe n'a plus aucun match à jouer !")
     } else {
         let fields = []
         let groupIdList = []
@@ -103,7 +103,7 @@ module.exports.execute = async (interaction) => {
 
             fields.push({
                 name: `Contre ${opo.name}`,
-                value: `Tour : ${stageOfMatch.name == "Groupes" ? groups.find(({id}) => id == m.group_id).name : stageOfMatch.name} - ${roundsOfGroups.find(({id}) => id == m.round_id).name}\nDate : ${m.scheduled_datetime == null ? 'A determiné' : `<t:${Math.floor(new Date(m.scheduled_datetime) / 1000)}:f>`}\nLieu : ${m.public_note == null ? 'A determiné' : `**${m.public_note}**`}`,
+                value: `Tour : ${stageOfMatch.name == "Groupes" ? groups.find(({id}) => id == m.group_id).name : stageOfMatch.name} - ${roundsOfGroups.find(({id}) => id == m.round_id).name}\nDate : ${m.scheduled_datetime == null ? 'À déterminer' : `<t:${Math.floor(new Date(m.scheduled_datetime) / 1000)}:f>`}\nLieu : ${m.public_note == null ? 'À déterminer' : `**${m.public_note}**`}`,
             })
         })
 
@@ -158,13 +158,13 @@ module.exports.dataSlash = new SlashCommandBuilder()
     .setDescription(this.info.description)
     .addStringOption(option =>
         option.setName("equipe")
-            .setDescription("Nom de l'équipe a afficher le planning")
+            .setDescription("Nom de l'équipe à afficher le planning")
             .setRequired(true)
             .setAutocomplete(true)
     )
     .addStringOption(option =>
         option.setName("jouer")
-            .setDescription("Afficher les matchs déjà jouer ou non")
+            .setDescription("Afficher les matchs déjà joués ou non")
             .setRequired(false)
             .addChoices(
                 { name: "Oui", value: "oui" },

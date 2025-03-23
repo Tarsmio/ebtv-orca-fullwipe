@@ -32,7 +32,7 @@ module.exports.execute = async (interaction) => {
 
     if (!commandName) {
         const helpEmbed = new EmbedBuilder()
-            .setTitle("Commandes de O.R.C.A Fullwipe")
+            .setTitle("Commandes d'O.R.C.A Fullwipe")
             .setThumbnail(interaction.client.user.avatarURL({
                 extension: 'png',
                 size: 128
@@ -179,7 +179,7 @@ module.exports.dataSlash = new SlashCommandBuilder()
     .setDescription(this.info.description)
     .addStringOption(option =>
         option.setName("commande")
-            .setDescription("Nom d'une commande pour un help specifique a celle ci")
+            .setDescription("Nom d'une commande pour un help spécifique à celle-ci")
             .setRequired(false)
             .setAutocomplete(true)
     )

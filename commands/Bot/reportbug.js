@@ -13,7 +13,7 @@ module.exports.execute = async (interaction) => {
     let bug = interaction.options.getString("bug")
 
     let bugReport = new EmbedBuilder()
-        .setTitle("Bug signaler !!")
+        .setTitle("Bug signalé !")
         .setDescription(bug)
         .setColor("#ff0000")
         .setThumbnail(interaction.user.displayAvatarURL())
@@ -24,7 +24,7 @@ module.exports.execute = async (interaction) => {
     let repButton = new ButtonBuilder()
         .setStyle(ButtonStyle.Link)
         .setURL(`https://discord.com/users/${interaction.user.id}`)
-        .setLabel("Repondre")
+        .setLabel("Répondre")
 
     let row = new ActionRowBuilder()
         .addComponents(repButton)
@@ -35,7 +35,7 @@ module.exports.execute = async (interaction) => {
         components: [row]
     })
 
-    await interaction.editReply("Merci de votre signalement ! N'hesitez pas a aller voir Tarsmio directement si le problème est vraiment urgent.")
+    await interaction.editReply("Merci de votre signalement ! N'hesitez pas à aller voir Tarsmio directement si le problème est vraiment urgent.")
 
 }
 
@@ -55,6 +55,6 @@ module.exports.dataSlash = new SlashCommandBuilder()
     .setDescription(this.info.description)
     .addStringOption(option =>
         option.setName("bug")
-            .setDescription("Decrire en 6000 caractere maximum le bug")
+            .setDescription("Décrire en 6000 caractères maximum le bug")
             .setRequired(true)
     )

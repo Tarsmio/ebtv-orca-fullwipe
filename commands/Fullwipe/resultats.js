@@ -38,7 +38,7 @@ module.exports.execute = async (interaction) => {
             }
         });
 
-        if (!find) return await interaction.editReply(`L'équipe \`${team}\` n'existe pas !\n-# Pensez a bien verifier les caracatères speciaux`)
+        if (!find) return await interaction.editReply(`L'équipe \`${team}\` n'existe pas !\n-# Pensez à bien vérifier les caractères spéciaux.`)
     }
 
     let teamName = team.split("_")[0]
@@ -59,8 +59,8 @@ module.exports.execute = async (interaction) => {
     let matches = await fetchMatchesPlayedOfTeam(teamId)
 
     let repEmbed = new EmbedBuilder()
-        .setTitle(`Resultats de ${teamName}`)
-        .setDescription(`Voici les resultats de ${teamName}`)
+        .setTitle(`Résultats de ${teamName}`)
+        .setDescription(`Voici les résultats de ${teamName}`)
         .setColor(randomFullwipeColor())
         .setThumbnail("attachment://logo.png")
         .setFooter({
@@ -72,7 +72,7 @@ module.exports.execute = async (interaction) => {
         })
 
     if (matches.length <= 0) {
-        repEmbed.setDescription("Cette équipe n'as aucun resultats !")
+        repEmbed.setDescription("Cette équipe n'a aucun résultat !")
     } else {
         let fields = []
         let stages = await fetchStages()
@@ -154,7 +154,7 @@ module.exports.autocom = async (interaction) => {
 
 module.exports.info = {
     name: "resultats",
-    description: 'Affiche les resultats d\'une équipe',
+    description: 'Affiche les résultats d\'une équipe',
     rolePermission: [],
     userPersmission: [],
     helpReportType: 0,
@@ -168,7 +168,7 @@ module.exports.dataSlash = new SlashCommandBuilder()
     .setDescription(this.info.description)
     .addStringOption(option =>
         option.setName("equipe")
-            .setDescription("Nom de l'équipe a afficher les resultats")
+            .setDescription("Nom de l'équipe à afficher les résultats")
             .setRequired(true)
             .setAutocomplete(true)
     )

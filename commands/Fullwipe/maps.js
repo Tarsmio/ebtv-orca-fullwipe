@@ -92,7 +92,7 @@ module.exports.execute = async (interaction) => {
 
 module.exports.info = {
     name: "maps",
-    description: 'Affiche les maps d\'une phase demander',
+    description: 'Affiche les maps d\'une phase demandé',
     rolePermission: [],
     userPersmission: [],
     helpReportType: 0,
@@ -106,7 +106,7 @@ module.exports.dataSlash = new SlashCommandBuilder()
     .setDescription(this.info.description)
     .addStringOption(option =>
         option.setName("phase")
-            .setDescription("La phases du tournoi a afficher les maps")
+            .setDescription("La phase du tournoi dont les maps doivent être affichées")
             .addChoices(stagesToChoice())
             .setRequired(true)
     )
