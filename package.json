@@ -2,7 +2,7 @@
   "name": "ebtv-orca-fullwipe",
   "version": "1.0.0",
   "description": "Orca version fullwipe",
-  "main": "index.js",
+  "main": "orca-fullwipe.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
