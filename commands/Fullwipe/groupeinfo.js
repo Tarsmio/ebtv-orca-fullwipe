@@ -5,7 +5,7 @@ const permIndex = require('../../utils/permIndex');
 const { randomFullwipeColor } = require('../../utils/utilityTools');
 const emoteModeIndex = require('../../utils/emoteModeIndex');
 const { fetchStages, fetchUniqueGroup, fetchRankingOfGroup } = require('../../utils/matchUtils');
-const { client } = require('../..');
+const { client } = require('../../orca-fullwipe');
 
 const rankEmoteIndex = [
     `<:ar:${process.env.RANK_AR_EMOTE}>`,
