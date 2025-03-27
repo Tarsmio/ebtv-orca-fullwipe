@@ -10,7 +10,7 @@ client.on('ready', async bot => {
     
     let installEmbed = new EmbedBuilder()
         .setTitle("O.R.C.A Fullwipe")
-        .setDescription("O.R.C.A Fullwipe est un bot qui vous facilitera la tâche lors de fullwipe.\n\nO.R.C.A Fullwipe est un bot a utiliser en mp. Cliquez sur le boutton en dessous pour commencer\n\nVerifiez que vous autoriser les message de membre venant de ce serveur !")
+        .setDescription("O.R.C.A Fullwipe est un bot qui vous facilitera la tâche pour Fullwipe.\n\nO.R.C.A Fullwipe est un bot à utiliser en message privé. Cliquez sur le bouton en dessous pour commencer. \n\nVérifiez que vous autorisez les messages des membres venant de ce serveur !")
         .setColor("#dc1c53")
         .setThumbnail(bot.user.displayAvatarURL({
             extension: "png",
