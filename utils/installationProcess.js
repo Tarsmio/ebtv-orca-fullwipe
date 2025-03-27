@@ -2,7 +2,7 @@ const { EmbedBuilder } = require("discord.js")
 
 function sendError(interaction) {
     interaction.reply({
-        content: "Je ne peut pas t'envoyer de message priver merci d'autoriser les messages de membre provenant de ce serveur",
+        content: "Je ne peux pas t'envoyer de message privé. Merci d'autoriser les messages de membres provenant de ce serveur.",
         ephemeral: true
     }).then(r => {
         setTimeout(() => interaction.deleteReply(), 15000)
@@ -15,12 +15,14 @@ module.exports = async (interaction) => {
     let channelToSend = user.dmChannel
 
     if (channelToSend == null) {
+        console.log("test avant")
         channelToSend = await user.createDM()
+        console.log("test apres")
     }
 
     let welcomeEmbed = new EmbedBuilder()
         .setTitle("O.R.C.A Fullwipe")
-        .setDescription("Merci d'utiliser O.R.C.A Fullwip ! Voici un petit guide d'utilisation !")
+        .setDescription("Merci d'utiliser O.R.C.A Fullwipe ! Voici un petit guide d'utilisation !")
         .setColor("#dc1c53")
         .addFields([
             {
@@ -56,10 +58,12 @@ module.exports = async (interaction) => {
             }).then(r => {
                 setTimeout(() => interaction.deleteReply(), 10000)
             })
+        }).catch(e => {
+            sendError(interaction)
         })
 
     } catch (error) {
-        sendError(interaction)
+        console.log(error)
     }
 
 
