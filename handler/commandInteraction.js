@@ -20,7 +20,6 @@ module.exports = async (interaction) => {
     }
 
     try {
-        let channelToEnd = interaction.channel
         await command.execute(interaction);
 
         let endEmbed = new EmbedBuilder()
@@ -36,7 +35,7 @@ module.exports = async (interaction) => {
                 })
             })
 
-        await channelToEnd.send({
+        await interaction.followUp({
             embeds: [endEmbed],
             files: [{
                 name: "end.jpg",
